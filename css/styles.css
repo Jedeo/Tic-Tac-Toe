@@ -1,4 +1,4 @@
-body{
+body {
   margin: 0;
   background-color: #03a9f4;
 }
@@ -16,4 +16,18 @@ body{
   width: 50vw;
   margin-left: 30vw;
   align-self: center;
+}
+.border-left, .border-left-only{
+  border-left: 5px solid
+}
+.border-right, .border-right-only{
+  border-right: 5px solid
+}
+
+.border-bottom, .border-right, .border-right, .border-left{
+  border-bottom: 5px solid;
+}
+
+.border-top{
+  border-top: 5px solid;
 }
