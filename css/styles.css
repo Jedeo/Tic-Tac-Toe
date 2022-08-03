@@ -31,3 +31,10 @@ body {
 .border-top{
   border-top: 5px solid;
 }
+.game-bord {
+  padding-left: 20vh;
+  width: 40vw;
+  height: 40vh;
+  align-self: center;
+  text-align: center;
+}
