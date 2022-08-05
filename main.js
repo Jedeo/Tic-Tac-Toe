@@ -1,5 +1,11 @@
 //game instantiation
 var game = new Game();
+game.playerOne.id = 1;
+game.playerTwo.id = 3;
+game.playerOne.token = "❤️";
+game.playerTwo.token = "👻";
+console.log(game);
+
 
 //globel variables
 var currentLocation;
