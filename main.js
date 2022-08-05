@@ -1,5 +1,10 @@
 //game instantiation
 var game = new Game();
+game.playerOne.id = 1;
+game.playerTwo.id = 3;
+game.playerOne.token = "❤️";
+game.playerTwo.token = "👻";
+console.log(game);
 
 //globel variables
 var currentLocation;
@@ -36,11 +41,12 @@ function displayGame() {
 
 }
 
+
 function getBox(){
   if(event.target.classList.contains("box")){
     var currentPlayer = document.querySelector(".toPlayNext");
      currentLocation = event.target.closest(".box")
-     currentLocation.innerHTML = "❤️" //👻
+     currentLocation.innerHTML = "❤️" //
 
   }
 }
