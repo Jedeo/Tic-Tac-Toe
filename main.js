@@ -1,5 +1,9 @@
 //game instantiation
 var game = new Game();
+
+//globel variables
+var currentLocation;
+
 // query selectors
 var gameSection = document.getElementById('table');
 var mainContainer = document.getElementById('mainContainer')
@@ -34,6 +38,9 @@ function displayGame() {
 
 function getBox(){
   if(event.target.classList.contains("box")){
-    
+    var currentPlayer = document.querySelector(".toPlayNext");
+     currentLocation = event.target.closest(".box")
+     currentLocation.innerHTML = "❤️" //👻
+
   }
 }
