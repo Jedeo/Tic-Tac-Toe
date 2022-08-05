@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.playerOne = new Player(1,"❤️")
-    this.PlayerTwo = new PlayerTwo(2,"👻")
+    this.playerOne = new Player()
+    this.PlayerTwo = new PlayerTwo()
     this.gameBord = new Board();
     this.turn = "x";
   }
