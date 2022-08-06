@@ -30,5 +30,9 @@ class Board {
 
       }
     }
+    updateBoard(playerMove){
+      this.board.pop()
+      this.Board.push(playerMove)
+    }
 
 }
