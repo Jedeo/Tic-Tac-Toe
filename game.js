@@ -5,6 +5,7 @@ class Game {
     this.gameBord = new Board();
     this.whoseTurn = this.playerOne.token;
   }
+  //chaning who plays next
   updateTurn() {
     var currentPlayer;
     console.log("in the method");
