@@ -39,15 +39,37 @@ function displayGame() {
 
 
 function getBox(){
-  console.log('got clicked');
+  ////updateding clicked box
   if(event.target.classList.contains("box")){
      tableContainer = event.target.closest(".box")
      tableContainer.innerHTML = nextToPlay.innerHTML
      displayPlayer()
-     game.gameBord.updateBoard(tableContainer.innerHTML)
+     //game.gameBord.updateBoard(tableContainer.innerHTML)
+     updateBoard()
   }
 }
 
+
 function displayPlayer(){
   nextToPlay.innerHTML = game.updateTurn();
+}
+
+//updateding gameBord
+function updateBoard(){
+  var position = event.target.closest(".box")
+  console.log("// DEBUG: closest box", position, game.playerOne.id );
+
+  game.gameBord.board[0]=1
+  game.gameBord.board[1]=3
+  game.gameBord.board[2]=3
+  game.gameBord.board[3]=3
+  game.gameBord.board[4]=1
+  game.gameBord.board[5]=3
+  game.gameBord.board[6]=1
+  game.gameBord.board[7]=1
+  game.gameBord.board[8]=1
+
+console.log(game.gameBord.checkForWin())
+  //game.gameBord.board[position] = 1;
+
 }

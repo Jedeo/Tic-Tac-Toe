@@ -7,6 +7,7 @@ class Board {
     this.winnerState = [];
   }
   checkForWin(){
+
     var posibilityOne  = this.board[0] + this.board[1] + this.board[2];
     var posibilityTwo  = this.board[3] + this.board[4] + this.board[5];
     var posibilityThree  = this.board[6] + this.board[7] + this.board[8];
@@ -20,6 +21,8 @@ class Board {
       posibilityThree === 3 || posibilityFour === 3 ||
       posibilityFive === 3 || posibilitySix === 3 ||
       posibilitySeven === 3 || posibilityEight === 3){
+        console.log("in if");
+        return true;
 
       }
       else if (
@@ -27,12 +30,14 @@ class Board {
         posibilityThree === 9 || posibilityFour === 9 ||
         posibilityFive === 9 || posibilitySix === 9 ||
         posibilitySeven === 9 || posibilityEight === 9) {
+          console.log("In Else");
+          return true
 
       }
     }
-    updateBoard(playerMove){
-      this.board.shift()
-      this.board.push(playerMove)
-    }
+    // updateBoard(position, value) {
+    //   this.board.shift()
+    //   this.board.push(position)
+    // }
 
 }
