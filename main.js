@@ -4,10 +4,10 @@ console.log(game);
 
 //globel variables
 var currentLocation;
-var toPlayNext = currentLocation;
 // query selectors
 var gameSection = document.getElementById('table');
 var tableContainer = document.getElementById('tableContainer')
+var nextToPlay = document.getElementById('playNow')
 
 //event listeners
 window.addEventListener('load', displayGame)
@@ -15,6 +15,8 @@ tableContainer.addEventListener('click', getBox)
 
 
 function displayGame() {
+  tableContainer.innerHTML='';
+  displayPlayer()
   tableContainer.innerHTML += `
   <tr>
     <td class="border-right box" id=""> 1 </td>
@@ -40,6 +42,11 @@ function getBox(){
   console.log('got clicked');
   if(event.target.classList.contains("box")){
      tableContainer = event.target.closest(".box")
-     tableContainer.innerHTML = game.updateTurn();
+     tableContainer.innerHTML = nextToPlay.innerHTML
+     displayPlayer()
   }
+}
+
+function displayPlayer(){
+  nextToPlay.innerHTML = game.updateTurn();
 }
