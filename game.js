@@ -10,7 +10,7 @@ class Game {
     console.log("in the method");
     if (this.whoseTurn !== this.playerTwo.token) {
       console.log("in if statment");
-      currentPlayer = this.playerOne.token
+      currentPlayer = this.playerOne.token;
       this.whoseTurn = this.playerTwo.token;
       console.log(currentPlayer);
       return currentPlayer;

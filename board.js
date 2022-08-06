@@ -31,8 +31,8 @@ class Board {
       }
     }
     updateBoard(playerMove){
-      this.board.pop()
-      this.Board.push(playerMove)
+      this.board.shift()
+      this.board.push(playerMove)
     }
 
 }

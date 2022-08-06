@@ -44,6 +44,7 @@ function getBox(){
      tableContainer = event.target.closest(".box")
      tableContainer.innerHTML = nextToPlay.innerHTML
      displayPlayer()
+     game.gameBord.updateBoard(tableContainer.innerHTML)
   }
 }
 
