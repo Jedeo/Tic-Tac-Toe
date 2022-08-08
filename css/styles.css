@@ -40,7 +40,8 @@ body {
   top: 0px;
 }
 .border-left, .border-left-only{
-  border-left: 5px solid
+  border-left: 5px solid;
+  height: 9rem;
 }
 .border-right, .border-right-only{
   border-right: 5px solid
@@ -48,6 +49,8 @@ body {
 
 .border-bottom, .border-right, .border-right, .border-left{
   border-bottom: 5px solid;
+  height: 9rem;
+  width: 7rem;
 }
 
 .border-top{
@@ -55,8 +58,8 @@ body {
 }
 .game-bord {
   font-size: 5vw;
-  width: 40vw;
-  height: 60vh;
+  width: 80%;
+  height: 50vh;;
   align-self: center;
   text-align: center;
 }

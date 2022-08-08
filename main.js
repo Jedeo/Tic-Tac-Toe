@@ -17,21 +17,22 @@ tableContainer.addEventListener('click', getBox)
 function displayGame() {
   tableContainer.innerHTML='';
   displayPlayer()
+  //updateBoard()
   tableContainer.innerHTML += `
   <tr>
-    <td class="border-right box" id=""> 1 </td>
-    <td class="border-bottom box" id=""> 2 </td>
-    <td class="border-left box" id=""> 3 </td>
+    <td class="border-right box0" id="">  </td>
+    <td class="border-bottom box1" id="">  </td>
+    <td class="border-left box2" id="">  </td>
   </tr>
   <tr>
-    <td class="border-right box" id=""> 4 </td>
-    <td class="border-bottom box" id=""> 5 </td>
-    <td class="border-left box" id=""> 6 </td>
+    <td class="border-right box3" id="">  </td>
+    <td class="border-bottom box4" id="">  </td>
+    <td class="border-left box5" id="">  </td>
   </tr>
   <tr>
-    <td class="border-right-only box" id=""> 7 </td>
-    <td class="box" id=""> 8 </td>
-    <td class="border-left-only box" id=""> 9 </td>
+    <td class="border-right-only box6" id="">  </td>
+    <td class="box7" id=""> </td>
+    <td class="border-left-only box8" id="">  </td>
   </tr>
   `
 
@@ -40,12 +41,66 @@ function displayGame() {
 
 function getBox(){
   ////updateding clicked box
-  if(event.target.classList.contains("box")){
-     tableContainer = event.target.closest(".box")
+  if(event.target.classList.contains("box0")){
+     tableContainer = event.target.closest(".box0")
+     tableContainer.innerHTML = nextToPlay.innerHTML
+     displayPlayer()
+     game.gameBord.board[0] = updateBoard()
+  }else if(event.target.classList.contains("box1")){
+     tableContainer = event.target.closest(".box1")
+     tableContainer.innerHTML = nextToPlay.innerHTML
+     displayPlayer()
+     game.gameBord.board[1] = updateBoard()
+     //game.gameBord.updateBoard(tableContainer.innerHTML)
+  }
+  else if(event.target.classList.contains("box2")){
+     tableContainer = event.target.closest(".box2")
      tableContainer.innerHTML = nextToPlay.innerHTML
      displayPlayer()
      //game.gameBord.updateBoard(tableContainer.innerHTML)
-     updateBoard()
+      game.gameBord.board[2] = updateBoard()
+  }
+  else if(event.target.classList.contains("box3")){
+     tableContainer = event.target.closest(".box3")
+     tableContainer.innerHTML = nextToPlay.innerHTML
+     displayPlayer()
+     //game.gameBord.updateBoard(tableContainer.innerHTML)
+     game.gameBord.board[3] = updateBoard()
+  }
+  else if(event.target.classList.contains("box4")){
+     tableContainer = event.target.closest(".box4")
+     tableContainer.innerHTML = nextToPlay.innerHTML
+     displayPlayer()
+     //game.gameBord.updateBoard(tableContainer.innerHTML)
+      game.gameBord.board[4] = updateBoard()
+  }
+  else if(event.target.classList.contains("box5")){
+     tableContainer = event.target.closest(".box5")
+     tableContainer.innerHTML = nextToPlay.innerHTML
+     displayPlayer()
+     //game.gameBord.updateBoard(tableContainer.innerHTML)
+     game.gameBord.board[5] = updateBoard()
+  }
+  else if(event.target.classList.contains("box6")){
+     tableContainer = event.target.closest(".box6")
+     tableContainer.innerHTML = nextToPlay.innerHTML
+     displayPlayer()
+     //game.gameBord.updateBoard(tableContainer.innerHTML)
+      game.gameBord.board[6] = updateBoard()
+  }
+  else if(event.target.classList.contains("box7")){
+     tableContainer = event.target.closest(".box7")
+     tableContainer.innerHTML = nextToPlay.innerHTML
+     displayPlayer()
+     //game.gameBord.updateBoard(tableContainer.innerHTML)
+      game.gameBord.board[7] = updateBoard()
+  }
+  else if(event.target.classList.contains("box8")){
+     tableContainer = event.target.closest(".box8")
+     tableContainer.innerHTML = nextToPlay.innerHTML
+     displayPlayer()
+     //game.gameBord.updateBoard(tableContainer.innerHTML)
+      game.gameBord.board[8] = updateBoard()
   }
 }
 
@@ -56,20 +111,11 @@ function displayPlayer(){
 
 //updateding gameBord
 function updateBoard(){
-  var position = event.target.closest(".box")
-  console.log("// DEBUG: closest box", position, game.playerOne.id );
-
-  game.gameBord.board[0]=1
-  game.gameBord.board[1]=3
-  game.gameBord.board[2]=3
-  game.gameBord.board[3]=3
-  game.gameBord.board[4]=1
-  game.gameBord.board[5]=3
-  game.gameBord.board[6]=1
-  game.gameBord.board[7]=1
-  game.gameBord.board[8]=1
-
-console.log(game.gameBord.checkForWin())
-  //game.gameBord.board[position] = 1;
-
+  if(nextToPlay.innerHTML === game.playerOne.token){
+    console.log(game.playerOne.id);
+    return game.playerOne.id;
+  }else if (nextToPlay.innerHTML === game.playerTwo.token) {
+    console.log(game.playerTwo.id);
+    return game.playerTwo.id
+  }
 }
