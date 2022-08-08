@@ -4,6 +4,7 @@ class Game {
     this.playerTwo = new Player(3, "👻")
     this.gameBord = new Board();
     this.whoseTurn = this.playerOne.token;
+    this.endOfgame = false
     this.currentId;
   }
   //chaning who plays next
@@ -41,16 +42,34 @@ class Game {
       posibilityThree === 0 || posibilityFour === 0 ||
       posibilityFive === 0 || posibilitySix === 0 ||
       posibilitySeven === 0 || posibilityEight === 0) {
-      this.playerOne.increaseWins();
+      console.log("playerOne wins");
+      this.endOfgame = true;
+      console.log(this.endOfgame);
       return this.playerOne.token
     } else if (
       posibilityOne === 9 || posibilityTwo === 9 ||
       posibilityThree === 9 || posibilityFour === 9 ||
       posibilityFive === 9 || posibilitySix === 9 ||
       posibilitySeven === 9 || posibilityEight === 9) {
-      this.playerTwo.increaseWins();
+      this.endOfgame = true;
       return this.playerTwo.token;
+    } else {
+      this.endOfgame = true;
+      return "It's A Draw"
+    }
+    }
+    resetGame(){
+      if(this.endOfgame === true){
+        this.gameBord.board = [-1, -1, -1,
+                               -1, -1, -1,
+                               -1, -1, -1,
+                              ];
+
+        setTimeout(newGame(), 5000)
+
       }
+
+
     }
 
 }

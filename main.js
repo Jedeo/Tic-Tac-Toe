@@ -8,7 +8,7 @@ var currentWinner;
 // query selectors
 var gameSection = document.getElementById('table');
 var tableContainer = document.getElementById('tableContainer')
-var nextToPlay = document.getElementById('playNow')
+var whoPlays = document.getElementById('playNow')
 var playerOneScore = document.getElementById('scoreOne');
 var playerTwoScore = document.getElementById('scoreTwo');
 
@@ -18,35 +18,43 @@ window.addEventListener('load', displayGame)
 tableContainer.addEventListener('click', getBox)
 
 
-function displayGame() {
-  tableContainer.innerHTML='';
-  displayPlayer()
-  //updateBoard()
+function renderNewGame() {
+  tableContainer.innerHTML = ""
+  console.log("new Game");
+  var whoPlays = (game.whoseTurn === game.playerOne.token ||
+                  game.whoseTurn === game.playerTwo.token) ? game.playerOne.token : game.playerTwo.token;
   tableContainer.innerHTML += `
   <tr>
-    <td class="border-right box0" id="">  </td>
-    <td class="border-bottom box1" id="">  </td>
-    <td class="border-left box2" id="">  </td>
+    <td class="border-right box box0" >  </td>
+    <td class="border-bottom box box1" >  </td>
+    <td class="border-left box box2" >  </td>
   </tr>
   <tr>
-    <td class="border-right box3" id="">  </td>
-    <td class="border-bottom box4" id="">  </td>
-    <td class="border-left box5" id="">  </td>
+    <td class="border-right box box3" >  </td>
+    <td class="border-bottom box box4" >  </td>
+    <td class="border-left box box5" i>  </td>
   </tr>
   <tr>
-    <td class="border-right-only box6" id="">  </td>
-    <td class="box7" id=""> </td>
-    <td class="border-left-only box8" id="">  </td>
+    <td class="border-right-only box box6" >  </td>
+    <td class="box box7" id=""> </td>
+    <td class="border-left-only box box8" >  </td>
   </tr>
   `
 
+}
+
+
+function displayGame() {
+  //tableContainer.innerHTML='';
+  displayPlayer()
+  renderNewGame()
 }
 
 function getBox(){
   ////updateding clicked box
   if(event.target.classList.contains("box0")){
      tableContainer = event.target.closest(".box0")
-     tableContainer.innerHTML = nextToPlay.innerHTML
+     tableContainer.innerHTML = whoPlays.innerHTML
      displayPlayer()
      game.gameBord.board[0] = updateBoard()
      currentWinner = game.checkForWin();
@@ -55,7 +63,7 @@ function getBox(){
      diplayWinner()
   }else if(event.target.classList.contains("box1")){
      tableContainer = event.target.closest(".box1")
-     tableContainer.innerHTML = nextToPlay.innerHTML
+     tableContainer.innerHTML = whoPlays.innerHTML
      displayPlayer()
      game.gameBord.board[1] = updateBoard()
      currentWinner = game.checkForWin();
@@ -65,7 +73,7 @@ function getBox(){
   }
   else if(event.target.classList.contains("box2")){
      tableContainer = event.target.closest(".box2")
-     tableContainer.innerHTML = nextToPlay.innerHTML
+     tableContainer.innerHTML = whoPlays.innerHTML
      displayPlayer()
      //game.gameBord.updateBoard(tableContainer.innerHTML)
       game.gameBord.board[2] = updateBoard()
@@ -76,7 +84,7 @@ function getBox(){
   }
   else if(event.target.classList.contains("box3")){
      tableContainer = event.target.closest(".box3")
-     tableContainer.innerHTML = nextToPlay.innerHTML
+     tableContainer.innerHTML = whoPlays.innerHTML
      displayPlayer()
      //game.gameBord.updateBoard(tableContainer.innerHTML)
      game.gameBord.board[3] = updateBoard()
@@ -86,7 +94,7 @@ function getBox(){
   }
   else if(event.target.classList.contains("box4")){
      tableContainer = event.target.closest(".box4")
-     tableContainer.innerHTML = nextToPlay.innerHTML
+     tableContainer.innerHTML = whoPlays.innerHTML
      displayPlayer()
      //game.gameBord.updateBoard(tableContainer.innerHTML)
       game.gameBord.board[4] = updateBoard()
@@ -96,7 +104,7 @@ function getBox(){
   }
   else if(event.target.classList.contains("box5")){
      tableContainer = event.target.closest(".box5")
-     tableContainer.innerHTML = nextToPlay.innerHTML
+     tableContainer.innerHTML = whoPlays.innerHTML
      displayPlayer()
      //game.gameBord.updateBoard(tableContainer.innerHTML)
      game.gameBord.board[5] = updateBoard()
@@ -107,7 +115,7 @@ function getBox(){
   }
   else if(event.target.classList.contains("box6")){
      tableContainer = event.target.closest(".box6")
-     tableContainer.innerHTML = nextToPlay.innerHTML
+     tableContainer.innerHTML = whoPlays.innerHTML
      displayPlayer()
      //game.gameBord.updateBoard(tableContainer.innerHTML)
       game.gameBord.board[6] = updateBoard()
@@ -118,7 +126,7 @@ function getBox(){
   }
   else if(event.target.classList.contains("box7")){
      tableContainer = event.target.closest(".box7")
-     tableContainer.innerHTML = nextToPlay.innerHTML
+     tableContainer.innerHTML = whoPlays.innerHTML
      displayPlayer()
      //game.gameBord.updateBoard(tableContainer.innerHTML)
       game.gameBord.board[7] = updateBoard()
@@ -129,7 +137,7 @@ function getBox(){
   }
   else if(event.target.classList.contains("box8")){
      tableContainer = event.target.closest(".box8")
-     tableContainer.innerHTML = nextToPlay.innerHTML
+     tableContainer.innerHTML = whoPlays.innerHTML
      displayPlayer()
      //game.gameBord.updateBoard(tableContainer.innerHTML)
       game.gameBord.board[8] = updateBoard()
@@ -142,15 +150,15 @@ function getBox(){
 
 
 function displayPlayer(){
-  nextToPlay.innerHTML = game.updateTurn();
+  whoPlays.innerHTML = game.updateTurn();
 }
 
 //updateding gameBord
 function updateBoard(){
-  if(nextToPlay.innerHTML === game.playerOne.token){
+  if(whoPlays.innerHTML === game.playerOne.token){
     //console.log(game.playerOne.id);
     return game.playerTwo.id;
-  }else if (nextToPlay.innerHTML === game.playerTwo.token) {
+  }else if (whoPlays.innerHTML === game.playerTwo.token) {
     //console.log(game.playerTwo.id);
     return game.playerOne.id
   }
@@ -159,11 +167,32 @@ function updateBoard(){
 function diplayWinner() {
   var winnerToken = game.checkForWin();
   var showWinner = document.getElementById("showWinner")
+
   if(winnerToken === game.playerOne.token){
     showWinner.innerHTML = `${winnerToken} Won!`
-  } else if (winnerToken === game.playerOne.token) {
+    game.playerOne.increaseWins();
+    game.resetGame();
+  } else if (winnerToken === game.playerTwo.token) {
     showWinner.innerHTML = `${winnerToken} Won!`
+    game.playerTwo.increaseWins();
+    game.resetGame()
+
   } else if(!game.gameBord.board.includes(-1)){
-    showWinner.innerHTML = "It's A Draw";
+    showWinner.innerHTML = winnerToken;
+    game.resetGame()
+
+  }
+}
+
+function newGame(){
+  var allBoxs = document.querySelectorAll('.box')
+  console.log(allBoxs);
+  if (game.endOfgame === true){
+      //setTimeout(displayPlayer(), 1000)
+    for (var i = 0; i < allBoxs.length; i++) {
+      allBoxs[i].innerHTML = "";
+    }
+
+
   }
 }
