@@ -46,11 +46,13 @@ function getBox(){
      tableContainer.innerHTML = nextToPlay.innerHTML
      displayPlayer()
      game.gameBord.board[0] = updateBoard()
+      game.checkForWin();
   }else if(event.target.classList.contains("box1")){
      tableContainer = event.target.closest(".box1")
      tableContainer.innerHTML = nextToPlay.innerHTML
      displayPlayer()
      game.gameBord.board[1] = updateBoard()
+      game.checkForWin();
      //game.gameBord.updateBoard(tableContainer.innerHTML)
   }
   else if(event.target.classList.contains("box2")){
@@ -59,6 +61,7 @@ function getBox(){
      displayPlayer()
      //game.gameBord.updateBoard(tableContainer.innerHTML)
       game.gameBord.board[2] = updateBoard()
+      game.checkForWin();
   }
   else if(event.target.classList.contains("box3")){
      tableContainer = event.target.closest(".box3")
@@ -66,6 +69,7 @@ function getBox(){
      displayPlayer()
      //game.gameBord.updateBoard(tableContainer.innerHTML)
      game.gameBord.board[3] = updateBoard()
+       game.checkForWin();
   }
   else if(event.target.classList.contains("box4")){
      tableContainer = event.target.closest(".box4")
@@ -73,6 +77,7 @@ function getBox(){
      displayPlayer()
      //game.gameBord.updateBoard(tableContainer.innerHTML)
       game.gameBord.board[4] = updateBoard()
+      game.checkForWin();
   }
   else if(event.target.classList.contains("box5")){
      tableContainer = event.target.closest(".box5")
@@ -80,6 +85,7 @@ function getBox(){
      displayPlayer()
      //game.gameBord.updateBoard(tableContainer.innerHTML)
      game.gameBord.board[5] = updateBoard()
+     game.checkForWin();
   }
   else if(event.target.classList.contains("box6")){
      tableContainer = event.target.closest(".box6")
@@ -87,6 +93,7 @@ function getBox(){
      displayPlayer()
      //game.gameBord.updateBoard(tableContainer.innerHTML)
       game.gameBord.board[6] = updateBoard()
+      game.checkForWin();
   }
   else if(event.target.classList.contains("box7")){
      tableContainer = event.target.closest(".box7")
@@ -94,6 +101,7 @@ function getBox(){
      displayPlayer()
      //game.gameBord.updateBoard(tableContainer.innerHTML)
       game.gameBord.board[7] = updateBoard()
+      game.checkForWin();
   }
   else if(event.target.classList.contains("box8")){
      tableContainer = event.target.closest(".box8")
@@ -101,6 +109,7 @@ function getBox(){
      displayPlayer()
      //game.gameBord.updateBoard(tableContainer.innerHTML)
       game.gameBord.board[8] = updateBoard()
+      game.checkForWin();
   }
 }
 
@@ -112,10 +121,10 @@ function displayPlayer(){
 //updateding gameBord
 function updateBoard(){
   if(nextToPlay.innerHTML === game.playerOne.token){
-    console.log(game.playerOne.id);
-    return game.playerOne.id;
+    //console.log(game.playerOne.id);
+    return game.playerTwo.id;
   }else if (nextToPlay.innerHTML === game.playerTwo.token) {
-    console.log(game.playerTwo.id);
-    return game.playerTwo.id
+    //console.log(game.playerTwo.id);
+    return game.playerOne.id
   }
 }
