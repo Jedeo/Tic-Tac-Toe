@@ -9,6 +9,11 @@ var gameSection = document.getElementById('table');
 var tableContainer = document.getElementById('tableContainer')
 var nextToPlay = document.getElementById('playNow')
 
+var playerOneScore = document.getElementById('scoreOne');
+
+var playerTwoScore = document.getElementById('scoreTwo');
+
+
 //event listeners
 window.addEventListener('load', displayGame)
 tableContainer.addEventListener('click', getBox)
@@ -46,13 +51,16 @@ function getBox(){
      tableContainer.innerHTML = nextToPlay.innerHTML
      displayPlayer()
      game.gameBord.board[0] = updateBoard()
-      game.checkForWin();
+     playerOneScore.innerHTML = game.playerOne.wins
+     playerTwoScore.innerHTML = game.playerTwo.wins
   }else if(event.target.classList.contains("box1")){
      tableContainer = event.target.closest(".box1")
      tableContainer.innerHTML = nextToPlay.innerHTML
      displayPlayer()
      game.gameBord.board[1] = updateBoard()
-      game.checkForWin();
+     game.checkForWin();
+     playerOneScore.innerHTML = game.playerOne.wins
+     playerTwoScore.innerHTML = game.playerTwo.wins
      //game.gameBord.updateBoard(tableContainer.innerHTML)
   }
   else if(event.target.classList.contains("box2")){
@@ -62,6 +70,8 @@ function getBox(){
      //game.gameBord.updateBoard(tableContainer.innerHTML)
       game.gameBord.board[2] = updateBoard()
       game.checkForWin();
+      playerOneScore.innerHTML = game.playerOne.wins
+      playerTwoScore.innerHTML = game.playerTwo.wins
   }
   else if(event.target.classList.contains("box3")){
      tableContainer = event.target.closest(".box3")
@@ -69,7 +79,8 @@ function getBox(){
      displayPlayer()
      //game.gameBord.updateBoard(tableContainer.innerHTML)
      game.gameBord.board[3] = updateBoard()
-       game.checkForWin();
+     game.checkForWin();
+     playerOneScore.innerHTML = game.playerOne.wins
   }
   else if(event.target.classList.contains("box4")){
      tableContainer = event.target.closest(".box4")
@@ -78,6 +89,8 @@ function getBox(){
      //game.gameBord.updateBoard(tableContainer.innerHTML)
       game.gameBord.board[4] = updateBoard()
       game.checkForWin();
+      playerOneScore.innerHTML = game.playerOne.wins
+      playerTwoScore.innerHTML = game.playerTwo.wins
   }
   else if(event.target.classList.contains("box5")){
      tableContainer = event.target.closest(".box5")
@@ -86,6 +99,8 @@ function getBox(){
      //game.gameBord.updateBoard(tableContainer.innerHTML)
      game.gameBord.board[5] = updateBoard()
      game.checkForWin();
+     playerOneScore.innerHTML = game.playerOne.wins
+     playerTwoScore.innerHTML = game.playerTwo.wins
   }
   else if(event.target.classList.contains("box6")){
      tableContainer = event.target.closest(".box6")
@@ -94,6 +109,8 @@ function getBox(){
      //game.gameBord.updateBoard(tableContainer.innerHTML)
       game.gameBord.board[6] = updateBoard()
       game.checkForWin();
+      playerOneScore.innerHTML = game.playerOne.wins
+      playerTwoScore.innerHTML = game.playerTwo.wins
   }
   else if(event.target.classList.contains("box7")){
      tableContainer = event.target.closest(".box7")
@@ -102,6 +119,8 @@ function getBox(){
      //game.gameBord.updateBoard(tableContainer.innerHTML)
       game.gameBord.board[7] = updateBoard()
       game.checkForWin();
+      playerOneScore.innerHTML = game.playerOne.wins
+      playerTwoScore.innerHTML = game.playerTwo.wins
   }
   else if(event.target.classList.contains("box8")){
      tableContainer = event.target.closest(".box8")
@@ -110,6 +129,8 @@ function getBox(){
      //game.gameBord.updateBoard(tableContainer.innerHTML)
       game.gameBord.board[8] = updateBoard()
       game.checkForWin();
+      playerOneScore.innerHTML = game.playerOne.wins
+      playerTwoScore.innerHTML = game.playerTwo.wins
   }
 }
 
