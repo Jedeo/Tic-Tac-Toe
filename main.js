@@ -155,3 +155,15 @@ function updateBoard(){
     return game.playerOne.id
   }
 }
+
+function diplayWinner() {
+  var winnerToken = game.checkForWin();
+  var showWinner = document.getElementById("showWinner")
+  if(winnerToken === game.playerOne.token){
+    showWinner.innerHTML = `${winnerToken} Won!`
+  } else if (winnerToken === game.playerOne.token) {
+    showWinner.innerHTML = `${winnerToken} Won!`
+  } else if(!game.gameBord.board.includes(-1)){
+    showWinner.innerHTML = "It's A Draw";
+  }
+}
