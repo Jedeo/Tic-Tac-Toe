@@ -35,9 +35,4 @@ class Board {
 
       }
     }
-    // updateBoard(position, value) {
-    //   this.board.shift()
-    //   this.board.push(position)
-    // }
-
 }
