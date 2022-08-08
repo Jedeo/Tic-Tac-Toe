@@ -41,13 +41,15 @@ class Game {
       posibilityThree === 0 || posibilityFour === 0 ||
       posibilityFive === 0 || posibilitySix === 0 ||
       posibilitySeven === 0 || posibilityEight === 0) {
-      return this.playerOne.increaseWins();
+      this.playerOne.increaseWins();
+      return this.playerOne.token
     } else if (
       posibilityOne === 9 || posibilityTwo === 9 ||
       posibilityThree === 9 || posibilityFour === 9 ||
       posibilityFive === 9 || posibilitySix === 9 ||
       posibilitySeven === 9 || posibilityEight === 9) {
-      return this.playerTwo.increaseWins();
+      this.playerTwo.increaseWins();
+      return this.playerTwo.token;
       }
     }
 
