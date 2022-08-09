@@ -53,10 +53,10 @@ console.log(posibilityEight);
       posibilitySeven === 0 || posibilityEight === 0) {
 
       console.log("playerOne wins");
+      this.playerOne.increaseWins()
       this.endOfgame = true;
       console.log(this.endOfgame);
       this.whoseTurn = this.playerTwo.token
-      this.playerOne.increaseWins()
       return this.playerOne.token
     } if (
       posibilityOne === 9 || posibilityTwo === 9 ||
