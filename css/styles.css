@@ -4,66 +4,69 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-.player {
   font-size: 3vw;
-  margin-top: 0px;
-  padding-top: 100px;
-  padding-left: 18vw;
-  margin-bottom: 15vh;
 }
+/* score section */
 .socoreBoard{
-  font-size: 3vw;
+  font-weight: bolder;
   display: flex;
   position: relative;
-  flex-direction: unset;
-  align-content: center;
   justify-content: space-between;
   margin-left: 9vw;
   margin-right: 9vw;
-  top: 51px;
+  top: 5vh;
 }
 
-.socoreBoard div {
+.p1,
+.p2 {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
+/* game bord-section */
 .main-container {
-  margin: 0;
   background-color: #fafcfd3d;
   height: 100vh;
-  width: 50vw;
+  width: 45vw;
   align-self: center;
   position: absolute;
   top: 0px;
 }
-.border-left, .border-left-only{
-  border-left: 5px solid;
-  height: 9rem;
-}
-.border-right, .border-right-only{
-  border-right: 5px solid
-}
-
-.border-bottom, .border-right, .border-right, .border-left{
-  border-bottom: 5px solid;
-  height: 9rem;
-  width: 7rem;
-}
-
-.border-top{
-  border-top: 5px solid;
+.player-header {
+  padding-top: 8vh;
+  align-self: center;
+  margin-bottom: 10vh;
 }
 .game-bord {
-  font-size: 5vw;
-  width: 80%;
-  height: 50vh;;
+  font-size: 6vw;
   align-self: center;
   text-align: center;
 }
+
 .game {
   display: flex;
   flex-direction: column;
+}
+
+.border-left,
+.border-left-only {
+  border-left: 5px solid;
+  height: 18vh;
+  width: 12vw;
+}
+
+.border-right,
+.border-right-only {
+  border-right: 5px solid;
+  height: 18vh;
+  width: 12vw;
+}
+
+.border-bottom,
+.border-right,
+.border-left {
+  border-bottom: 5px solid;
+  height: 18vh;
+  width: 12vw;
 }
