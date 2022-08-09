@@ -65,7 +65,7 @@ class Game {
                                -1, -1, -1,
                               ];
 
-        setTimeout(newGame(), 5000)
+        //location.reload()
 
       }
 
