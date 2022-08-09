@@ -25,7 +25,7 @@ function renderNewGame() {
   tableContainer.innerHTML = ""
   tableContainer.innerHTML += `
   <tr>
-    <td class="border-right box box0" >  </td>
+    <td class="border-right box box0" disabled>  </td>
     <td class="border-bottom box box1" >  </td>
     <td class="border-left box box2" >  </td>
   </tr>
@@ -61,8 +61,7 @@ function displayGame() {
 function getBox(){
   //var currentBox;
   //updateding clicked box on DOM
-  if(event.target.classList.contains("box0")){
-
+  if(event.target.classList.contains("box0") && game.gameBoard.board[0] === -1){
     //console.log(currentBox);
      tableContainer = event.target.closest(".box0")
      tableContainer.innerHTML = playNow.innerHTML
@@ -73,7 +72,7 @@ function getBox(){
      //playerOneScore.innerHTML = game.playerOne.wins
      //playerTwoScore.innerHTML = game.playerTwo.wins
      diplayWinner()
-  }else if(event.target.classList.contains("box1")){
+  }else if(event.target.classList.contains("box1") && game.gameBoard.board[1] === -1){
      tableContainer = event.target.closest(".box1")
      tableContainer.innerHTML = playNow.innerHTML
      displayPlayer()
@@ -83,7 +82,7 @@ function getBox(){
      // playerTwoScore.innerHTML = game.playerTwo.wins
      //game.gameBoard.updateBoard(tableContainer.innerHTML)
   }
-  else if(event.target.classList.contains("box2")){
+  else if(event.target.classList.contains("box2") && game.gameBoard.board[2] === -1){
      tableContainer = event.target.closest(".box2")
      tableContainer.innerHTML = playNow.innerHTML
      displayPlayer()
@@ -94,7 +93,7 @@ function getBox(){
       // playerTwoScore.innerHTML = game.playerTwo.wins
       diplayWinner()
   }
-  else if(event.target.classList.contains("box3")){
+  else if(event.target.classList.contains("box3") && game.gameBoard.board[3] === -1){
      tableContainer = event.target.closest(".box3")
      tableContainer.innerHTML = playNow.innerHTML
      displayPlayer()
@@ -104,7 +103,7 @@ function getBox(){
      playerOneScore.innerHTML = game.playerOne.wins
      diplayWinner()
   }
-  else if(event.target.classList.contains("box4")){
+  else if(event.target.classList.contains("box4") && game.gameBoard.board[4] === -1){
      tableContainer = event.target.closest(".box4")
      tableContainer.innerHTML = playNow.innerHTML
      displayPlayer()
@@ -114,7 +113,7 @@ function getBox(){
       // playerOneScore.innerHTML = game.playerOne.wins
       // playerTwoScore.innerHTML = game.playerTwo.wins
   }
-  else if(event.target.classList.contains("box5")){
+  else if(event.target.classList.contains("box5") && game.gameBoard.board[5] === -1){
      tableContainer = event.target.closest(".box5")
      tableContainer.innerHTML = playNow.innerHTML
      displayPlayer()
@@ -125,7 +124,7 @@ function getBox(){
      // playerTwoScore.innerHTML = game.playerTwo.wins
      diplayWinner()
   }
-  else if(event.target.classList.contains("box6")){
+  else if(event.target.classList.contains("box6") && game.gameBoard.board[6] === -1){
      tableContainer = event.target.closest(".box6")
      tableContainer.innerHTML = playNow.innerHTML
      displayPlayer()
@@ -136,7 +135,7 @@ function getBox(){
       // playerTwoScore.innerHTML = game.playerTwo.wins
       diplayWinner()
   }
-  else if(event.target.classList.contains("box7")){
+  else if(event.target.classList.contains("box7") && game.gameBoard.board[7] === -1){
      tableContainer = event.target.closest(".box7")
      tableContainer.innerHTML = playNow.innerHTML
      displayPlayer()
@@ -147,7 +146,7 @@ function getBox(){
       // playerTwoScore.innerHTML = game.playerTwo.wins
       diplayWinner()
   }
-  else if(event.target.classList.contains("box8")){
+  else if(event.target.classList.contains("box8") && game.gameBoard.board[8] === -1){
      tableContainer = event.target.closest(".box8")
      tableContainer.innerHTML = playNow.innerHTML
      displayPlayer()
