@@ -16,7 +16,7 @@
   - HTML
   - CSS
 ## Illustrations
-  ![Tic Tac Toe](https://user-images.githubusercontent.com/16736352/183753589-5052e42b-b420-44c3-98eb-524aa39f2317.mov)
+  https://user-images.githubusercontent.com/16736352/183753589-5052e42b-b420-44c3-98eb-524aa39f2317.mov
 ## Features
   The game can track the players’ scores and tells the players when it is their turn. The players can click on where they want to place their icon on the board and the icon image displays accordingly.
 
