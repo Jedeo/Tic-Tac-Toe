@@ -173,18 +173,18 @@ function updateBoard(){
 
 //display winner on DOM
 function diplayWinner() {
+  var isEndGame = game.endOfgame
   var winnerToken = game.checkForWin();
-  if(winnerToken === game.playerOne.token){
+  if(winnerToken === game.playerOne.token || !game.gameBoard.board.includes(-1)){
+    //currentWinner = game.checkForWin()
     playerOneScore.innerHTML = game.playerOne.wins
-    currentWinner = game.checkForWin()
     //game.playerOne.increaseWins();
     showWinner.innerHTML = `${winnerToken} Won!`
-    currentWinner = game.checkForWin()
     setTimeout(displayPlayer, 2000)
     game.resetGame();
     setTimeout(restartGame, 2000)
     return;
-  } else if (winnerToken === game.playerTwo.token) {
+  } else if (winnerToken === game.playerTwo.token || !game.gameBoard.board.includes(-1)) {
     playerTwoScore.innerHTML = game.playerTwo.wins
     //game.playerTwo.increaseWins();
     showWinner.innerHTML = `${winnerToken} Won!`
@@ -197,8 +197,6 @@ function diplayWinner() {
     setTimeout(displayPlayer, 2000)
     game.resetGame()
     setTimeout(restartGame, 2000)
-
-
   }
 }
 //restting game
