@@ -13,10 +13,6 @@
   -I used HTML, CSS, and JavaScript in this project to create a simple tic-tac-toe game. For JavaScript, I used three classes: Player, Board, and Game classes. Within those classes, I created some methods that helped update the data model. I used the Query Selectors to update the DOM with the data model.
 ## Technologies
   - Javascript
-
-
-
-
   - HTML
   - CSS
 ## Illustrations
