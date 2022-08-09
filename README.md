@@ -13,10 +13,14 @@
   -I used HTML, CSS, and JavaScript in this project to create a simple tic-tac-toe game. For JavaScript, I used three classes: Player, Board, and Game classes. Within those classes, I created some methods that helped update the data model. I used the Query Selectors to update the DOM with the data model.
 ## Technologies
   - Javascript
+
+
+
+
   - HTML
   - CSS
 ## Illustrations
-  ![Ideabox](./assets/Tic-tac-toe.mov)
+  ![Tic Tac Toe](https://user-images.githubusercontent.com/16736352/183753589-5052e42b-b420-44c3-98eb-524aa39f2317.mov)
 ## Features
   The game can track the players’ scores and tells the players when it is their turn. The players can click on where they want to place their icon on the board and the icon image displays accordingly.
 
