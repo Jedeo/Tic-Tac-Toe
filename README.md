@@ -1,4 +1,4 @@
-# Ideabox
+# TIC TAC TOE
 ## Table of Contents
   - [Introduction](#introduction)
   - [Technologies](#technologies)
