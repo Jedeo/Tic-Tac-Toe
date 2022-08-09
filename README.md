@@ -16,7 +16,7 @@
   - HTML
   - CSS
 ## Illustrations
-  ![Ideabox](/assets/Tic-tac-toe.mov)
+  ![Ideabox](./assets/Tic-tac-toe.mov)
 ## Features
   The game can track the players’ scores and tells the players when it is their turn. The players can click on where they want to place their icon on the board and the icon image displays accordingly.
 
