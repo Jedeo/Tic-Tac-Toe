@@ -4,7 +4,8 @@ console.log(game);
 
 //globel variables
 var currentLocation;
-var currentWinner;
+//var currentWinner;
+
 // query selectors
 var gameSection = document.getElementById('table');
 var tableContainer = document.getElementById('tableContainer')
@@ -20,6 +21,7 @@ tableContainer.addEventListener('click', getBox)
 
 
 function renderNewGame() {
+  console.log("// DEBUG: repeater");
   tableContainer.innerHTML = ""
   tableContainer.innerHTML += `
   <tr>
@@ -53,30 +55,32 @@ function displayGame() {
   //tableContainer.innerHTML='';
   displayPlayer()
   renderNewGame()
+
 }
 
 function getBox(){
   //var currentBox;
   //updateding clicked box on DOM
   if(event.target.classList.contains("box0")){
+
     //console.log(currentBox);
      tableContainer = event.target.closest(".box0")
      tableContainer.innerHTML = playNow.innerHTML
      currentBox = tableContainer.innerHTML
      displayPlayer()
      game.gameBoard.board[0] = updateBoard()
-     currentWinner = game.checkForWin();
-     playerOneScore.innerHTML = game.playerOne.wins
-     playerTwoScore.innerHTML = game.playerTwo.wins
+    // currentWinner = game.checkForWin();
+     //playerOneScore.innerHTML = game.playerOne.wins
+     //playerTwoScore.innerHTML = game.playerTwo.wins
      diplayWinner()
   }else if(event.target.classList.contains("box1")){
      tableContainer = event.target.closest(".box1")
      tableContainer.innerHTML = playNow.innerHTML
      displayPlayer()
      game.gameBoard.board[1] = updateBoard()
-     currentWinner = game.checkForWin();
-     playerOneScore.innerHTML = game.playerOne.wins
-     playerTwoScore.innerHTML = game.playerTwo.wins
+    // currentWinner = game.checkForWin();
+     // playerOneScore.innerHTML = game.playerOne.wins
+     // playerTwoScore.innerHTML = game.playerTwo.wins
      //game.gameBoard.updateBoard(tableContainer.innerHTML)
   }
   else if(event.target.classList.contains("box2")){
@@ -85,9 +89,9 @@ function getBox(){
      displayPlayer()
      //game.gameBoard.updateBoard(tableContainer.innerHTML)
       game.gameBoard.board[2] = updateBoard()
-      currentWinner = game.checkForWin();
-      playerOneScore.innerHTML = game.playerOne.wins
-      playerTwoScore.innerHTML = game.playerTwo.wins
+      //currentWinner = game.checkForWin();
+      // playerOneScore.innerHTML = game.playerOne.wins
+      // playerTwoScore.innerHTML = game.playerTwo.wins
       diplayWinner()
   }
   else if(event.target.classList.contains("box3")){
@@ -96,7 +100,7 @@ function getBox(){
      displayPlayer()
      //game.gameBoard.updateBoard(tableContainer.innerHTML)
      game.gameBoard.board[3] = updateBoard()
-     currentWinner = game.checkForWin();
+    /// currentWinner = game.checkForWin();
      playerOneScore.innerHTML = game.playerOne.wins
      diplayWinner()
   }
@@ -106,9 +110,9 @@ function getBox(){
      displayPlayer()
      //game.gameBoard.updateBoard(tableContainer.innerHTML)
       game.gameBoard.board[4] = updateBoard()
-      currentWinner = game.checkForWin();
-      playerOneScore.innerHTML = game.playerOne.wins
-      playerTwoScore.innerHTML = game.playerTwo.wins
+      //currentWinner = game.checkForWin();
+      // playerOneScore.innerHTML = game.playerOne.wins
+      // playerTwoScore.innerHTML = game.playerTwo.wins
   }
   else if(event.target.classList.contains("box5")){
      tableContainer = event.target.closest(".box5")
@@ -116,9 +120,9 @@ function getBox(){
      displayPlayer()
      //game.gameBoard.updateBoard(tableContainer.innerHTML)
      game.gameBoard.board[5] = updateBoard()
-     currentWinner = game.checkForWin();
-     playerOneScore.innerHTML = game.playerOne.wins
-     playerTwoScore.innerHTML = game.playerTwo.wins
+     //currentWinner = game.checkForWin();
+     // playerOneScore.innerHTML = game.playerOne.wins
+     // playerTwoScore.innerHTML = game.playerTwo.wins
      diplayWinner()
   }
   else if(event.target.classList.contains("box6")){
@@ -127,9 +131,9 @@ function getBox(){
      displayPlayer()
      //game.gameBoard.updateBoard(tableContainer.innerHTML)
       game.gameBoard.board[6] = updateBoard()
-      currentWinner = game.checkForWin();
-      playerOneScore.innerHTML = game.playerOne.wins
-      playerTwoScore.innerHTML = game.playerTwo.wins
+      //currentWinner = game.checkForWin();
+      // playerOneScore.innerHTML = game.playerOne.wins
+      // playerTwoScore.innerHTML = game.playerTwo.wins
       diplayWinner()
   }
   else if(event.target.classList.contains("box7")){
@@ -138,9 +142,9 @@ function getBox(){
      displayPlayer()
      //game.gameBoard.updateBoard(tableContainer.innerHTML)
       game.gameBoard.board[7] = updateBoard()
-      currentWinner = game.checkForWin();
-      playerOneScore.innerHTML = game.playerOne.wins
-      playerTwoScore.innerHTML = game.playerTwo.wins
+      //currentWinner = game.checkForWin();
+      // playerOneScore.innerHTML = game.playerOne.wins
+      // playerTwoScore.innerHTML = game.playerTwo.wins
       diplayWinner()
   }
   else if(event.target.classList.contains("box8")){
@@ -149,9 +153,9 @@ function getBox(){
      displayPlayer()
      //game.gameBoard.updateBoard(tableContainer.innerHTML)
       game.gameBoard.board[8] = updateBoard()
-      currentWinner = game.checkForWin();
-      playerOneScore.innerHTML = game.playerOne.wins
-      playerTwoScore.innerHTML = game.playerTwo.wins
+      //currentWinner = game.checkForWin();
+      // playerOneScore.innerHTML = game.playerOne.wins
+      // playerTwoScore.innerHTML = game.playerTwo.wins
       diplayWinner()
   }
 }
@@ -172,12 +176,14 @@ function updateBoard(){
 function diplayWinner() {
   var winnerToken = game.checkForWin();
   if(winnerToken === game.playerOne.token){
+    playerOneScore.innerHTML = game.playerOne.wins
     //game.playerOne.increaseWins();
     showWinner.innerHTML = `${winnerToken} Won!`
     setTimeout(displayPlayer, 2000)
     game.resetGame();
     setTimeout(restartGame, 2000)
   } else if (winnerToken === game.playerTwo.token) {
+    playerTwoScore.innerHTML = game.playerTwo.wins
     //game.playerTwo.increaseWins();
     showWinner.innerHTML = `${winnerToken} Won!`
     setTimeout(displayPlayer, 2000)
@@ -194,7 +200,7 @@ function diplayWinner() {
 }
 //restting game
 function restartGame(){
-  updateScore()
+  //updateScore()
   var allBoxs = document.querySelectorAll('.box')
   console.log(allBoxs);
   if (game.endOfgame === true){
@@ -204,10 +210,10 @@ function restartGame(){
   }
 }
 
-function updateScore(){
-  if(currentWinner === game.playerOne.token){
-    game.playerOne.increaseWins()
-  } else if(currentWinner === game.playerTwo.token){
-    game.playerTwo.increaseWins()
-  }
-}
+// function updateScore(){
+//   if(currentWinner === game.playerOne.token){
+//     game.playerOne.increaseWins()
+//   } else if(currentWinner === game.playerTwo.token){
+//     game.playerTwo.increaseWins()
+//   }
+// }
