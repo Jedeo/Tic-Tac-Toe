@@ -38,7 +38,6 @@ class Game {
       posibilitySeven === 0 || posibilityEight === 0) {
       this.playerOne.increaseWins();
       this.endOfgame = true;
-      this.whoseTurn = this.playerTwo.token;
       return this.playerOne.token;
     }
     if (
@@ -48,7 +47,6 @@ class Game {
       posibilitySeven === 9 || posibilityEight === 9) {
       this.playerTwo.increaseWins();
       this.endOfgame = true;
-      this.whoseTurn = this.playerOne.token;
       return this.playerTwo.token;
     } else {
       this.endOfgame = true;

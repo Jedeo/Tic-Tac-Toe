@@ -59,6 +59,7 @@ function updateBoard() {
 function diplayWinner() {
   const winnerToken = game.checkForWin();
   if (winnerToken === game.playerOne.token) {
+    game.updateTurn();
     playerOneScore.innerHTML = game.playerOne.wins
     showWinner.innerHTML = `${winnerToken} Won!`
     setTimeout(displayPlayer, 2000)
@@ -66,6 +67,7 @@ function diplayWinner() {
     setTimeout(restartGame, 2000)
     return;
   } else if (winnerToken === game.playerTwo.token) {
+    game.updateTurn();
     playerTwoScore.innerHTML = game.playerTwo.wins
     showWinner.innerHTML = `${winnerToken} Won!`
     setTimeout(displayPlayer, 2000)
@@ -73,6 +75,7 @@ function diplayWinner() {
     setTimeout(restartGame, 2000)
     return;
   } else if (!game.gameBoard.board.includes(-1)) {
+    game.updateTurn();
     showWinner.innerHTML = winnerToken;
     setTimeout(displayPlayer, 2000)
     game.resetGame()
