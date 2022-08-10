@@ -1,7 +1,7 @@
 # TIC TAC TOE
 ## Table of Contents
   - [Introduction](#introduction)
-  - [How To Use](#How To Use)
+  - [How To Use](#How-To-Use)
   - [Technologies](#technologies)
   - [Illustrations](#illustrations)
   - [Features](#Features)
