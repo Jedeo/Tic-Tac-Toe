@@ -38,17 +38,16 @@ class Game {
       posibilitySeven === 0 || posibilityEight === 0) {
       this.playerOne.increaseWins();
       this.endOfgame = true;
-      return this.playerOne.token;
-    }
-    if (
+      return `${this.playerOne.token} Won!`;
+    } else if (
       posibilityOne === 9 || posibilityTwo === 9 ||
       posibilityThree === 9 || posibilityFour === 9 ||
       posibilityFive === 9 || posibilitySix === 9 ||
       posibilitySeven === 9 || posibilityEight === 9) {
       this.playerTwo.increaseWins();
       this.endOfgame = true;
-      return this.playerTwo.token;
-    } else {
+      return `${this.playerTwo.token} Won!`;
+    } else if (!this.gameBoard.board.includes(-1)) {
       this.endOfgame = true;
       return "It's A Draw";
     }
