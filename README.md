@@ -34,7 +34,7 @@ $ cd Tic-Tac-Toe.git
   The game can track the players’ scores and tells the players when it is their turn. The players can click on where they want to place their icon on the board and the icon image displays accordingly.
 
 ## Deployed Page
-Visit our published Ideabox application! [here](link goes here)
+Visit our published application! [here](https://jedeo.github.io/Tic-Tac-Toe/)
 ## Sources
   - [MDN](https://developer.mozilla.org)
   - [W3Schools](https://www.w3schools.com)
